@@ -1,7 +1,7 @@
 
 本文为人工智能课程设计的第一道题目，内容为手势图像(剪刀石头布图像)的识别与分类，收到数据集数量和大小的限制，本文中只提供了若干张图片用于训练，完整的训练数据集下载链接[如下](https://storage.googleapis.com/laurencemoroney-blog.appspot.com/rps.zip)。所用到的测试数据为部分自采图像与部分测试图像，这里同样只展示一小部分。如图为部分训练图像。
 
-<figure >
+<figure class="third">
 <center>
 <img src="./data/paper/paper01-000.png" height="100"><img src="./data/rock/rock01-000.png" height=100><img src="./data/scissors/scissors01-000.png" height=100>
 </center>
@@ -19,15 +19,15 @@
 ### **图像预处理**
 在图像预处理中，若直接对灰度图像进行阈值分割，尽管可以得到手势掩膜图像，但由于不同图像光线、肤色的差异，效果不够稳定，部分结果如下所示。
 
-<figure >
+<figure class="third">
 <center>
 <img src="./pictures/out_rgb_paper04-000.png" height="100"><img src="./pictures/out_rgb_rock01-000.png" height=100><img src="./pictures/out_rgb_scissors01-119.png" height=100>
 </center>
 </figure>
 
-因此本方法中首先对原图像进行颜色空间转换至HSV颜色空间，并对其进行去噪与阈值分割处理获取掩膜图像，结果如下图所示，效果十分理想。
+因此本方法中首先对原图像进行颜色空间转换至HSV颜色空间，并对其中**H通道**进行去噪与阈值分割处理获取掩膜图像，结果如下图所示，效果十分理想。
 
-<figure >
+<figure class="third">
 <center>
 <img src="./pictures/out_paper04-000.png" height="100"><img src="./pictures/out_rock01-000.png" height=100><img src="./pictures/out_scissors01-119.png" height=100>
 </center>
